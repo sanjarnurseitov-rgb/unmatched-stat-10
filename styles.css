@@ -20,3 +20,17 @@ select,input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid
 .team-box{border:1px solid rgba(255,255,255,0.03);padding:8px;border-radius:8px;margin-top:8px}
 .team-title{font-weight:700;color:var(--accent);margin-bottom:6px}
 @media(max-width:900px){.main-grid{grid-template-columns:1fr}.charts-row{flex-direction:column}}
+/* --- Fix dropdown (select) background for dark theme --- */
+select {
+    background-color: #111827 !important;
+    color: #e5e7eb !important;
+    border: 1px solid #4b5563;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+select option {
+    background: #1f2937 !important;
+    color: #f3f4f6 !important;
+    padding: 8px;
+}
