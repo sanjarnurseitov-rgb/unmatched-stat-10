@@ -34,3 +34,10 @@ select option {
     color: #f3f4f6 !important;
     padding: 8px;
 }
+/* Players inline edit styles */
+.player-item{display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:8px;background:rgba(255,255,255,0.02);margin-bottom:8px}
+.player-item .meta{font-size:14px}
+.player-item .actions{display:flex;gap:8px}
+.player-edit{display:flex;gap:8px;align-items:center;width:100%}
+.edit-input{flex:1;padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:inherit}
+.btn.small{padding:6px 8px;font-size:13px}
