@@ -1,0 +1,290 @@
+[
+  {
+    "name_ru": "Алиса",
+    "name_en": "Alice"
+  },
+  {
+    "name_ru": "Синдбад",
+    "name_en": "Sinbad"
+  },
+  {
+    "name_ru": "Король Артур",
+    "name_en": "King Arthur"
+  },
+  {
+    "name_ru": "Медуза",
+    "name_en": "Medusa"
+  },
+  {
+    "name_ru": "Шерлок Холмс",
+    "name_en": "Sherlock Holmes"
+  },
+  {
+    "name_ru": "Человек-Невидимка",
+    "name_en": "Invisible Man"
+  },
+  {
+    "name_ru": "Дракула",
+    "name_en": "Dracula"
+  },
+  {
+    "name_ru": "Джекил и Хайд",
+    "name_en": "Jekyll & Hyde"
+  },
+  {
+    "name_ru": "Бигфут",
+    "name_en": "Bigfoot"
+  },
+  {
+    "name_ru": "Робин Гуд",
+    "name_en": "Robin Hood"
+  },
+  {
+    "name_ru": "Красная Шапочка",
+    "name_en": "Little Red Riding Hood"
+  },
+  {
+    "name_ru": "Беовульф",
+    "name_en": "Beowulf"
+  },
+  {
+    "name_ru": "Ти-Рекс",
+    "name_en": "T. Rex"
+  },
+  {
+    "name_ru": "Др. Сэттлер",
+    "name_en": "Dr. Ellie Sattler"
+  },
+  {
+    "name_ru": "Малдун",
+    "name_en": "InGen"
+  },
+  {
+    "name_ru": "Рапторы",
+    "name_en": "Raptors"
+  },
+  {
+    "name_ru": "Джинн",
+    "name_en": "The Genie"
+  },
+  {
+    "name_ru": "Гудини",
+    "name_en": "Harry Houdini"
+  },
+  {
+    "name_ru": "Сунь Укун",
+    "name_en": "Sun Wukong"
+  },
+  {
+    "name_ru": "Кровавая Мэри",
+    "name_en": "Bloody Mary"
+  },
+  {
+    "name_ru": "Йенненга",
+    "name_en": "Yennenga"
+  },
+  {
+    "name_ru": "Ахиллес",
+    "name_en": "Achilles"
+  },
+  {
+    "name_ru": "Сорвиголова",
+    "name_en": "Daredevil"
+  },
+  {
+    "name_ru": "Электра",
+    "name_en": "Elektra"
+  },
+  {
+    "name_ru": "Меченый",
+    "name_en": "Bullseye"
+  },
+  {
+    "name_ru": "Люк Кейдж",
+    "name_en": "Luke Cage"
+  },
+  {
+    "name_ru": "Лунный Рыцарь",
+    "name_en": "Moon Knight"
+  },
+  {
+    "name_ru": "Призрачный Гонщик",
+    "name_en": "Ghost Rider"
+  },
+  {
+    "name_ru": "Плащ и Кинжал",
+    "name_en": "Cloak and Dagger"
+  },
+  {
+    "name_ru": "Мисс Марвел",
+    "name_en": "Ms. Marvel"
+  },
+  {
+    "name_ru": "Девочка-Белка",
+    "name_en": "Squirrel Girl"
+  },
+  {
+    "name_ru": "Зимний Солдат",
+    "name_en": "Winter Soldier"
+  },
+  {
+    "name_ru": "Черная Пантера",
+    "name_en": "Black Panther"
+  },
+  {
+    "name_ru": "Черная Вдова",
+    "name_en": "Black Widow"
+  },
+  {
+    "name_ru": "Женщина-Халк",
+    "name_en": "She-Hulk"
+  },
+  {
+    "name_ru": "Доктор Стрэндж",
+    "name_en": "Dr. Strange"
+  },
+  {
+    "name_ru": "Человек-Паук",
+    "name_en": "Spider-Man"
+  },
+  {
+    "name_ru": "Дэдпул",
+    "name_en": "Deadpool"
+  },
+  {
+    "name_ru": "Брюс Ли",
+    "name_en": "Bruce Lee"
+  },
+  {
+    "name_ru": "Энни Кристмас",
+    "name_en": "Annie Christmas"
+  },
+  {
+    "name_ru": "Никола Тесла",
+    "name_en": "Nikola Tesla"
+  },
+  {
+    "name_ru": "Джилл Трент",
+    "name_en": "Dr. Jill Trent"
+  },
+  {
+    "name_ru": "Золотой Крылан",
+    "name_en": "Golden Bat"
+  },
+  {
+    "name_ru": "Томоэ Годзен",
+    "name_en": "Tomoe Gozen"
+  },
+  {
+    "name_ru": "Ода Нобунага",
+    "name_en": "Oda Nobunaga"
+  },
+  {
+    "name_ru": "Шекспир",
+    "name_en": "William Shakespeare"
+  },
+  {
+    "name_ru": "Гамлет",
+    "name_en": "Hamlet"
+  },
+  {
+    "name_ru": "Титания",
+    "name_en": "Titania"
+  },
+  {
+    "name_ru": "Вещие Сестры",
+    "name_en": "The Wayward Sisters"
+  },
+  {
+    "name_ru": "Спайк",
+    "name_en": "Spike"
+  },
+  {
+    "name_ru": "Уиллоу",
+    "name_en": "Willow"
+  },
+  {
+    "name_ru": "Ангел",
+    "name_en": "Angel"
+  },
+  {
+    "name_ru": "Баффи (Джайлз)",
+    "name_en": "Buffy (Giles)"
+  },
+  {
+    "name_ru": "Баффи (Ксандер)",
+    "name_en": "Buffy (Xander)"
+  },
+  {
+    "name_ru": "Геральт из Ривии",
+    "name_en": "Geralt of Rivia"
+  },
+  {
+    "name_ru": "Эредин",
+    "name_en": "Eredin"
+  },
+  {
+    "name_ru": "Цири",
+    "name_en": "Ciri"
+  },
+  {
+    "name_ru": "Леший",
+    "name_en": "Ancient Leshen"
+  },
+  {
+    "name_ru": "Трисс и Йеннифер",
+    "name_en": "Triss & Yennefer"
+  },
+  {
+    "name_ru": "Йеннифер и Трисс",
+    "name_en": "Yennefer & Triss"
+  },
+  {
+    "name_ru": "Филиппа",
+    "name_en": "Philippa"
+  },
+  {
+    "name_ru": "Чупакабра",
+    "name_en": "Chupacabra"
+  },
+  {
+    "name_ru": "Черная Борода",
+    "name_en": "Blackbeard"
+  },
+  {
+    "name_ru": "Локи",
+    "name_en": "Loki"
+  },
+  {
+    "name_ru": "Пандора",
+    "name_en": "Pandora"
+  },
+  {
+    "name_ru": "Леонардо",
+    "name_en": "Leonardo"
+  },
+  {
+    "name_ru": "Рафаэль",
+    "name_en": "Raphael"
+  },
+  {
+    "name_ru": "Микеланджело",
+    "name_en": "Michelangelo"
+  },
+  {
+    "name_ru": "Донателло",
+    "name_en": "Donatello"
+  },
+  {
+    "name_ru": "Шреддер",
+    "name_en": "Shredder"
+  },
+  {
+    "name_ru": "Крэнг",
+    "name_en": "Krang"
+  },
+  {
+    "name_ru": "Мухаммед Али",
+    "name_en": "Muhammad Ali"
+  }
+]
