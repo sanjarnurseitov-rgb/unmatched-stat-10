@@ -57,6 +57,14 @@ function createSearchSelect(id, items, onSelect) {
 async function loadStatic(){
   try{ heroes = await fetch('data/heroes.json').then(r=>r.json()); }catch(e){ heroes=[]; console.error(e); }
   try{ maps = await fetch('data/maps.json').then(r=>r.json()); }catch(e){ maps=[]; console.error(e); }
+  createSearchSelect(
+  "mapSelect",
+  maps,             // массив строк — всё правильно
+  (chosen) => {     // что делаем при выборе карты
+    selectedMap = chosen;
+  }
+);
+
   loadLocal();
   renderPlayersList();
   buildTeamsForm();
