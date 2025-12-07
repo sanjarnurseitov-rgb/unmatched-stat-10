@@ -16,6 +16,51 @@ async function loadStatic(){
   populateMap();
   updateAll();
 }
+function createSearchSelect(elementId, items, onSelect) {
+  const container = document.getElementById(elementId);
+  container.classList.add("search-select");
+
+  container.innerHTML = `
+    <input type="text" placeholder="Поиск..." />
+    <div class="dropdown"></div>
+  `;
+
+  const input = container.querySelector("input");
+  const dropdown = container.querySelector(".dropdown");
+
+  function render(list) {
+    dropdown.innerHTML = "";
+    list.forEach(item => {
+      const opt = document.createElement("div");
+      opt.textContent = item;
+      opt.onclick = () => {
+        input.value = item;
+        dropdown.style.display = "none";
+        onSelect(item);
+      };
+      dropdown.appendChild(opt);
+    });
+  }
+
+  render(items);
+
+  input.addEventListener("input", () => {
+    const text = input.value.toLowerCase();
+    const filtered = items.filter(i => i.toLowerCase().includes(text));
+    render(filtered);
+    dropdown.style.display = "block";
+  });
+
+  input.addEventListener("focus", () => {
+    dropdown.style.display = "block";
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!container.contains(e.target)) {
+      dropdown.style.display = "none";
+    }
+  });
+}
 
 function saveLocal(){ if(!$('saveLocal').checked) return; localStorage.setItem('unmatched_matches', JSON.stringify(matches)); localStorage.setItem('unmatched_players', JSON.stringify(players)); }
 function loadLocal(){ try{ matches = JSON.parse(localStorage.getItem('unmatched_matches')) || []; }catch(e){ matches=[] } try{ players = JSON.parse(localStorage.getItem('unmatched_players')) || []; }catch(e){ players=[] } }
