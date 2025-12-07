@@ -16,6 +16,7 @@
   </header>
 
   <main class="wrap main-grid">
+    <!-- Добавить матч -->
     <section class="panel">
       <h2>Добавить матч</h2>
 
@@ -28,7 +29,7 @@
       <div id="teamsContainer"></div>
 
       <label>Поле</label>
-      <select id="map"></select>
+      <div id="mapSelect" class="search-select"></div>
 
       <label>Победила команда</label>
       <select id="result">
@@ -42,10 +43,12 @@
       </div>
 
       <div class="small">
-        <input type="checkbox" id="saveLocal" checked> <label for="saveLocal">Сохранять локально</label>
+        <input type="checkbox" id="saveLocal" checked>
+        <label for="saveLocal">Сохранять локально</label>
       </div>
     </section>
 
+    <!-- Игроки -->
     <section class="panel">
       <h2>Игроки</h2>
       <label>Добавить игрока</label>
@@ -53,30 +56,25 @@
         <input id="newPlayerName" placeholder="Ник игрока">
         <button id="addPlayerBtn" class="btn ghost">Добавить</button>
       </div>
+
       <div id="playersList" class="players-list"></div>
     </section>
 
+    <!-- Графики -->
     <section class="panel full">
       <h2>Графики и статистика</h2>
+
       <div class="charts-row">
-        <div class="chart-card"><h3>Победы/Поражения по героям</h3><canvas id="heroChart"></canvas></div>
-        <div class="chart-card"><h3>Топ игроков</h3><canvas id="playerChart"></canvas></div>
+        <div class="chart-card">
+          <h3>Победы/Поражения по героям</h3>
+          <canvas id="heroChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Топ игроков</h3>
+          <canvas id="playerChart"></canvas>
+        </div>
       </div>
+
       <h3>История матчей</h3>
-      <div id="matchesTable" class="matches-table"></div>
-      <div class="row">
-        <button id="exportBtn" class="btn">Экспорт JSON</button>
-        <button id="importBtn" class="btn ghost">Импорт JSON</button>
-        <input id="importFile" type="file" accept="application/json" style="display:none">
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap"><small>Static project — localStorage. Можно подключить sync через Firebase/Supabase.</small></div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+      <div id="matchesTable" class="matches-table">
