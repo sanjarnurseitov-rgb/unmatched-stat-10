@@ -21,7 +21,110 @@ function saveLocal(){ if(!$('saveLocal').checked) return; localStorage.setItem('
 function loadLocal(){ try{ matches = JSON.parse(localStorage.getItem('unmatched_matches')) || []; }catch(e){ matches=[] } try{ players = JSON.parse(localStorage.getItem('unmatched_players')) || []; }catch(e){ players=[] } }
 
 function addPlayer(name){ if(!name) return; if(!players.includes(name)) players.push(name); saveLocal(); renderPlayersList(); rebuildPlayerSelects(); }
-function renderPlayersList(){ const box=$('playersList'); box.innerHTML=''; players.forEach(p=>{ const d=document.createElement('div'); d.className='player-item'; d.innerHTML=`<div class="meta">${p}</div><div><button class="btn ghost" data-player="${p}">Удалить</button></div>`; box.appendChild(d); }); box.querySelectorAll('button[data-player]').forEach(b=>b.addEventListener('click',e=>{ const name=e.currentTarget.dataset.player; if(!confirm('Удалить '+name+'?')) return; players=players.filter(x=>x!==name); saveLocal(); renderPlayersList(); rebuildPlayerSelects(); })); }
+// ---------- Players UI: render, edit, delete ----------
+function renderPlayersList(){
+  const box = document.getElementById('playersList');
+  box.innerHTML = '';
+
+  players.forEach((p, idx) => {
+    const row = document.createElement('div');
+    row.className = 'player-item';
+    row.dataset.index = idx;
+
+    // static view (name + buttons)
+    row.innerHTML = `
+      <div class="player-view">
+        <div class="meta">${escapeHtml(p)}</div>
+        <div class="actions">
+          <button class="btn ghost edit-btn" data-i="${idx}">Изменить</button>
+          <button class="btn ghost delete-btn" data-i="${idx}">Удалить</button>
+        </div>
+      </div>
+    `;
+    box.appendChild(row);
+  });
+
+  // attach handlers (delegation)
+  box.querySelectorAll('.delete-btn').forEach(b=>{
+    b.addEventListener('click', (e)=>{
+      const i = Number(e.currentTarget.dataset.i);
+      if(!confirm('Удалить игрока "' + players[i] + '"?')) return;
+      players.splice(i,1);
+      saveLocal();
+      renderPlayersList();
+      rebuildPlayerSelects(); // обновляем селекты
+    });
+  });
+
+  box.querySelectorAll('.edit-btn').forEach(b=>{
+    b.addEventListener('click', (e)=>{
+      const i = Number(e.currentTarget.dataset.i);
+      enterEditMode(i);
+    });
+  });
+}
+
+// helper: create edit controls in place of static view
+function enterEditMode(index){
+  const box = document.getElementById('playersList');
+  const row = box.querySelector(`.player-item[data-index="${index}"]`);
+  if(!row) return;
+  const oldName = players[index];
+
+  // replace content with inline edit form
+  row.innerHTML = `
+    <div class="player-edit">
+      <input class="edit-input" value="${escapeHtmlAttr(oldName)}" />
+      <div class="actions">
+        <button class="btn save-edit" data-i="${index}">Сохранить</button>
+        <button class="btn ghost cancel-edit" data-i="${index}">Отмена</button>
+      </div>
+    </div>
+  `;
+
+  const input = row.querySelector('.edit-input');
+  input.focus();
+  input.select();
+
+  // save handler
+  row.querySelector('.save-edit').addEventListener('click', ()=>{
+    const val = input.value.trim();
+    if(!val){
+      alert('Имя не может быть пустым');
+      input.focus();
+      return;
+    }
+    players[index] = val;
+    saveLocal();
+    renderPlayersList();
+    rebuildPlayerSelects();
+  });
+
+  // cancel handler
+  row.querySelector('.cancel-edit').addEventListener('click', ()=>{
+    renderPlayersList();
+  });
+
+  // keyboard: Enter = save, Esc = cancel
+  input.addEventListener('keydown', (ev)=>{
+    if(ev.key === 'Enter'){
+      ev.preventDefault();
+      row.querySelector('.save-edit').click();
+    } else if(ev.key === 'Escape'){
+      ev.preventDefault();
+      row.querySelector('.cancel-edit').click();
+    }
+  });
+}
+
+// small helpers to avoid XSS if names contain special chars
+function escapeHtml(s){
+  return String(s || '').replace(/[&<>"']/g, function(m){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]; });
+}
+function escapeHtmlAttr(s){
+  return escapeHtml(s).replace(/"/g,'&quot;');
+}
+
 
 function buildTeamsForm(){ const c=$('teamsContainer'); c.innerHTML=''; const mode=$('mode').value; if(mode==='1v1'){ c.appendChild(teamNode('A',1)); c.appendChild(teamNode('B',1)); } else { c.appendChild(teamNode('A',2)); c.appendChild(teamNode('B',2)); } rebuildPlayerSelects(); }
 
