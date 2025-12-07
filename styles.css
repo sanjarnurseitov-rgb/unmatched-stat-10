@@ -1,0 +1,22 @@
+
+:root{--bg:#071022;--panel:#0c1622;--muted:#9aa4bf;--accent:#7c3aed;--glass:rgba(255,255,255,0.02);--card:#0f1724}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#e6eef8;background:linear-gradient(180deg,var(--bg),#041020)}.wrap{max-width:1100px;margin:0 auto;padding:20px}
+.site-header{padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.03)}.site-header h1{margin:0;font-size:20px}.tagline{color:var(--muted);margin-top:6px;font-size:13px}
+.main-grid{display:grid;grid-template-columns:360px 1fr;gap:18px;padding:18px 0}.panel{background:var(--panel);padding:14px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}.panel.full{grid-column:1/3}
+h2{margin:0 0 12px;color:var(--accent)}
+label{display:block;margin-top:10px;color:var(--muted);font-size:13px}
+select,input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:var(--glass);color:inherit;margin-top:6px}
+.btn{display:inline-block;padding:9px 12px;border-radius:10px;background:var(--accent);border:none;color:white;cursor:pointer;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04)}
+.small{margin-top:10px;color:var(--muted);font-size:13px}
+.row{display:flex;gap:8px;align-items:center;margin-top:10px}
+.players-list{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.player-item{background:var(--card);padding:8px;border-radius:8px;display:flex;justify-content:space-between;align-items:center}
+.player-item .meta{font-size:14px}
+.charts-row{display:flex;gap:12px;flex-wrap:wrap}
+.chart-card{flex:1;min-width:280px;background:#081225;padding:10px;border-radius:10px}
+.matches-table{margin-top:10px;color:var(--muted);font-size:13px}
+.slot{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;align-items:start}
+.team-box{border:1px solid rgba(255,255,255,0.03);padding:8px;border-radius:8px;margin-top:8px}
+.team-title{font-weight:700;color:var(--accent);margin-bottom:6px}
+@media(max-width:900px){.main-grid{grid-template-columns:1fr}.charts-row{flex-direction:column}}

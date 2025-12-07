@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unmatched Stats — Полная версия</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>UNMATCHED — Статистика</h1>
+      <p class="tagline">Полная версия: 1v1 и 2v2, профили, выбор героя для каждого игрока</p>
+    </div>
+  </header>
+
+  <main class="wrap main-grid">
+    <section class="panel">
+      <h2>Добавить матч</h2>
+
+      <label>Режим</label>
+      <select id="mode">
+        <option value="1v1">1 vs 1</option>
+        <option value="2v2">2 vs 2</option>
+      </select>
+
+      <div id="teamsContainer"></div>
+
+      <label>Поле</label>
+      <select id="map"></select>
+
+      <label>Победила команда</label>
+      <select id="result">
+        <option value="A">Команда A</option>
+        <option value="B">Команда B</option>
+      </select>
+
+      <div class="row">
+        <button id="addMatchBtn" class="btn">Добавить матч</button>
+        <button id="resetBtn" class="btn ghost">Сбросить данные</button>
+      </div>
+
+      <div class="small">
+        <input type="checkbox" id="saveLocal" checked> <label for="saveLocal">Сохранять локально</label>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Игроки</h2>
+      <label>Добавить игрока</label>
+      <div class="row">
+        <input id="newPlayerName" placeholder="Ник игрока">
+        <button id="addPlayerBtn" class="btn ghost">Добавить</button>
+      </div>
+      <div id="playersList" class="players-list"></div>
+    </section>
+
+    <section class="panel full">
+      <h2>Графики и статистика</h2>
+      <div class="charts-row">
+        <div class="chart-card"><h3>Победы/Поражения по героям</h3><canvas id="heroChart"></canvas></div>
+        <div class="chart-card"><h3>Топ игроков</h3><canvas id="playerChart"></canvas></div>
+      </div>
+      <h3>История матчей</h3>
+      <div id="matchesTable" class="matches-table"></div>
+      <div class="row">
+        <button id="exportBtn" class="btn">Экспорт JSON</button>
+        <button id="importBtn" class="btn ghost">Импорт JSON</button>
+        <input id="importFile" type="file" accept="application/json" style="display:none">
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><small>Static project — localStorage. Можно подключить sync через Firebase/Supabase.</small></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
