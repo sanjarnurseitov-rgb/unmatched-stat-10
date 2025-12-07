@@ -6,6 +6,53 @@ let heroes = [];
 let maps = [];
 let matches = [];
 let players = [];
+// ==========================
+// Searchable Select Component
+// ==========================
+function createSearchSelect(id, items, onSelect) {
+  const container = document.getElementById(id);
+  container.classList.add("search-select");
+
+  container.innerHTML = `
+    <input type="text" placeholder="Поиск...">
+    <div class="dropdown"></div>
+  `;
+
+  const input = container.querySelector("input");
+  const dropdown = container.querySelector(".dropdown");
+
+  function render(list) {
+    dropdown.innerHTML = "";
+    list.forEach(item => {
+      const el = document.createElement("div");
+      el.textContent = item;
+      el.onclick = () => {
+        input.value = item;
+        dropdown.style.display = "none";
+        onSelect(item);
+      };
+      dropdown.appendChild(el);
+    });
+  }
+
+  render(items);
+
+  input.addEventListener("input", () => {
+    const val = input.value.toLowerCase();
+    render(items.filter(x => x.toLowerCase().includes(val)));
+    dropdown.style.display = "block";
+  });
+
+  input.addEventListener("focus", () => {
+    dropdown.style.display = "block";
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!container.contains(e.target)) {
+      dropdown.style.display = "none";
+    }
+  });
+}
 
 async function loadStatic(){
   try{ heroes = await fetch('data/heroes.json').then(r=>r.json()); }catch(e){ heroes=[]; console.error(e); }
