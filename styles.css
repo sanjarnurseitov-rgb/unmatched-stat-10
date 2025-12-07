@@ -41,3 +41,40 @@ select option {
 .player-edit{display:flex;gap:8px;align-items:center;width:100%}
 .edit-input{flex:1;padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:inherit}
 .btn.small{padding:6px 8px;font-size:13px}
+/* кастомный select с поиском */
+.search-select {
+  position: relative;
+  width: 100%;
+}
+
+.search-select input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  background: #1b1b33;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+}
+
+.search-select .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #1f1f3d;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.15);
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  z-index: 30;
+}
+
+.search-select .dropdown div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.search-select .dropdown div:hover {
+  background: #292955;
+}
